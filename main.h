@@ -17,4 +17,4 @@ choose_func
 /*New prototypes for printf acording a format*/
 char printf_char(char c);
 
-#endif 
+#endif
