@@ -1,5 +1,6 @@
 # Ignore files type C
 .c
 *.out
+main.c
 CMakeLists.txt
 cmake-build-debug
