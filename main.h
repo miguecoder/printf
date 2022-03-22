@@ -4,6 +4,9 @@
 #include <stdlib.h> /* malloc, free*/
 #include <unistd.h> /* Write function*/
 
+/*write function*/
+int _write/char c);
+
 /*Principal Prootype*/
 int _printf(const char *format, ...);
 
