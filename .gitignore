@@ -1,6 +1,5 @@
-# VSCode Workspace
-.vscode
-*.code-workspace
-
-# Executables files
-*.run
+# Ignore files type C
+.c
+*.out
+CMakeLists.txt
+cmake-build-debug
