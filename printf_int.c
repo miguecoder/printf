@@ -10,7 +10,7 @@ char *print_int(va_list list)
 	char *save;
 	int a;
 	int i = 0, j = 0;
-	char buffer[10]; 
+	char buffer[10];
 	unsigned int buf;
 
 	if (!list)
