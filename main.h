@@ -14,9 +14,9 @@ int _strlen(char *s);
 char* (*choose_func(char *p))(va_list arg);
 
 /*New prototypes for printf acording a format*/
-char printf_char(void);
-char printf_string(void);
-int print_int(void);
+char printf_char(va_list);
+char printf_string(va_list);
+char print_int(va_list);
 
 /**
  * struct arg - Define structure of data
