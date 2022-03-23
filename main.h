@@ -13,13 +13,18 @@ int _strlen(char *s);
 /*Function to select a function acording a format*/
 char* (*choose_func(char *p))(va_list arg);
 
-
 /*New prototypes for printf acording a format*/
-char printf_char();
-char printf_string();
-int print_int();
+char printf_char(void);
+char printf_string(void);
+int print_int(void);
 
-/*Define structure of data according to give a printf*/
+/**
+ * struct arg - Define structure of data
+ * according to give a printf.
+ *
+ * @c:call the function.
+ * @func: argument pointer.
+ */
 typedef struct arg
 {
 	char c;
