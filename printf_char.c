@@ -12,11 +12,12 @@ char *print_char(va_list list)
 	char *save;
 	char chrs;
 
-	if(!list)
+	if (!list)
 		return (0);
 
-	chrs = va_arg(list; int);
+	chrs = va_arg(list, int);
 	save = malloc(sizeof(char) * 2);
+
 	if (!save)
 	{
 		free(save);
