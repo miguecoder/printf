@@ -4,9 +4,6 @@
 #include <stdlib.h> /* malloc, free*/
 #include <unistd.h> /* Write function*/
 
-/*write function*/
-int _write/char c);
-
 /*Principal Prootype*/
 int _printf(const char *format, ...);
 
@@ -14,10 +11,19 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 
 /*Function to select a function acording a format*/
-choose_func
+char* (*choose_func(char *p))(va_list arg);
 
 
 /*New prototypes for printf acording a format*/
-char printf_char(char c);
+char printf_char();
+char printf_string();
+int print_int();
 
-#endif
+/*Define structure of data according to give a printf*/
+typedef struct arg
+{
+	char c;
+	char* (*func)();
+};
+
+#endif /*MAIN_H*/
