@@ -22,8 +22,8 @@ int print_int(void);
  * struct arg - Define structure of data
  * according to give a printf.
  *
- * @c:call the function.
- * @func: argument pointer.
+ * @c:format of data.
+ * @func: pointer to a function.
  */
 typedef struct arg
 {
