@@ -8,7 +8,7 @@
  */
 char* (*choose_func(char *p))(va_list)
 {
-	arg funciones[] = {
+	arg_p funciones[] = {
 		{'c', printf_char},
 		{'s', printf_string},
 		{'d', print_int},
