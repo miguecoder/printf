@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/**/
-=======
 #include "main.h"
 
 /**
@@ -59,5 +56,3 @@ char *print_string(va_list list)
 
 	return (result);
 }
-
->>>>>>> 44bcf0f0b25f14c0a7c8909568a5f85a41e5c383
