@@ -9,10 +9,10 @@
 char* (*choose_func(char *p))(va_list)
 {
 	arg_p funciones[] = {
-		{'c', printf_char},
-		{'s', printf_string},
-		{'d', print_int},
-		{'i', print_int},
+		{'c', _printf_char},
+		{'s', _printf_string},
+		{'d', _printf_int},
+		{'i', _printf_int},
 		{'\0', NULL}
 	};
 	int i = 0;
