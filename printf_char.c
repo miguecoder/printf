@@ -7,30 +7,30 @@
  *
  */
 
-char _print_char(va_list list)
+char *_printf_char(va_list arg)
 {
-	char *save;
-	char chrs;
+	char *chartoprint;
+	char chr;
 
-	if (!list)
+	if (arg == NULL)
 		return (0);
 
-	chrs = va_arg(list, int);
-	save = malloc(sizeof(char) * 2);
+	chr = va_arg(arg, int);
+	chartoprint = malloc(sizeof(char) * 2);
 
-	if (!save)
+	if (chartoprint == NULL)
 	{
-		free(save);
+		free(chartoprint);
 		return (NULL);
 	}
-	if (chrs)
+	if (chr)
 	{
-		save[0] = chrs;
+		chartoprint[0] = chr;
 	}
 	else
 	{
-		save[0] = '\0';
+		chartoprint[0] = '\0';
 	}
-	save[1] = '\0';
-return (save);
+	chartoprint[1] = '\0';
+	return (chartoprint);
 }
