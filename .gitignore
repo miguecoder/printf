@@ -1,6 +1,4 @@
 # Ignore files type C
-.c
-
 .idea
 
 *.out
