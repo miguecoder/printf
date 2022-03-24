@@ -11,6 +11,8 @@ char* (*choose_func(char *p))(va_list)
 	arg funciones[] = {
 		{'c', printf_char},
 		{'s', printf_string},
+		{'d', print_int},
+		{'i', print_int},
 		{'\0', NULL}
 	};
 	int i = 0;
