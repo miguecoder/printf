@@ -44,8 +44,6 @@ char *print_string(va_list list)
 	}
 	if (string[0] == '\0')
 		string = "";
-	for (j = 0; string[j]; j++)
-	;
 	result = malloc(j + 1);
 	if (!result)
 		{
