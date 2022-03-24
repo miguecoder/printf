@@ -7,7 +7,7 @@
  *
  */
 
-char *print_char(va_list list)
+char _print_char(va_list list)
 {
 	char *save;
 	char chrs;

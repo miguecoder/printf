@@ -29,6 +29,6 @@ typedef struct arg
 {
 	char c;
 	char* (*func)();
-} arg_p;
+}arg_p;
 
 #endif /*MAIN_H*/
