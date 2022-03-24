@@ -9,7 +9,7 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 {
 	va_list argument;
 	int i, j, len = 0, kby = 1024;
-	char *string, buffer[kby], ch;
+	char *f_name, buffer[kby], ch;
 	char* (*f)(va_list);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -23,17 +23,18 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			f = choose_func(format[i + 1]);
+			/*char* (*choose_func(char *))(va_list)*/
+			f = choose_func((char *)format + i + 1);
 
 			if (f == NULL)
 			{
 				return (-1);
 			}
 
-			string = f(argument);
-			for (j = 0; point[j]; j++)
+			f_name = f(argument);
+			for (j = 0; f_name[j]; j++)
 			{
-				buffer[len] = string[j];
+				buffer[len] = f_name[j];
 				len++;
 			}
 			if (len == 0)
