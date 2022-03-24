@@ -15,9 +15,9 @@ char* (*choose_func(char *p))(va_list)
 	};
 	int i = 0;
 
-	while (!funciones[i].c == '\0')
+	while (funciones[i].c)
 	{
-		if (funciones[i] == *p)
+		if (funciones[i].c == *p)
 		{
 			return (funciones[i].func);
 		}

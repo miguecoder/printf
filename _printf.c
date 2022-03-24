@@ -23,7 +23,7 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			f = choose_func((char *)format[i + 1]);
+			f = choose_func(format[i + 1]);
 
 			if (f == NULL)
 			{
