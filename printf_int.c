@@ -5,44 +5,52 @@
 * @list: va_arg
 * Return: String to print
 */
-char *print_int(va_list list)
+char *print_int(va_list args)
 {
-	char *save;
-	int a;
-	int i = 0, j = 0;
+	char *inttoprint;
+	int integer, i = 0, j = 0;
 	char buffer[10];
-	unsigned int buf;
+	unsigned int intsig;
 
 	if (!list)
+	{
 		return (NULL);
-	a = va_arg(list, int);
-	if (a == 0)
+	}
+	integer = va_arg(args, int);
+
+	if (integer == 0)
 	{
 		j = 1;
-		save = malloc(sizeof(char) * 2);
-		save[0] = '0';
+		inttoprint = malloc(sizeof(char) * 2);
+		inttoprint[0] = '0';
 	}
 	else
 	{
-		if (a < 0)
-			buf = -a;
-		else
-			buf = a;
-
-		while (buf)
+		if (integer < 0)
 		{
-			buffer[i++] = (buf % 10) + '0';
-			buf = buf / 10;
+			intsig = -integer;
 		}
-		if (n < 0)
+		else
+		{
+			intsig = integer;
+		}
+
+		while (intsig)
+		{
+			buffer[i++] = (intsig % 10) + '0';
+			intsig = intsig / 10;
+		}
+		if (integer < 0)
+		{
 			buffer[i++] = '-';
-		save = malloc(sizeof(char) * i);
+		}
+		inttoprint = malloc(sizeof(char) * i);
 
 		i--;
 		while (i >= 0)
-		save[j++] = buffer[i--];
+		inttoprint[j++] = buffer[i--];
 	}
-	save[j] = '\0';
-	return (save);
+	inttoprint[j] = '\0';
+	return (inttoprint);
 }
 
