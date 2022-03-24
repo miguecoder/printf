@@ -1,4 +1,4 @@
-#ifndef MAIN_H 
+#ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h> /* va_list, va_start, va_end, va_arg, va_copy*/
 #include <stdlib.h> /* malloc, free*/
@@ -11,12 +11,12 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 
 /*Function to select a function acording a format*/
-char* (*choose_func(char *p))(va_list arg);
+char* (*choose_func(char *p))(va_list);
 
 /*New prototypes for printf acording a format*/
-char printf_char(va_list arg);
-char printf_string(va_list arg);
-char print_int(va_list arg);
+char _printf_char(va_list arg);
+char _printf_string(va_list arg);
+char _printf_int(va_list arg);
 
 /**
  * struct arg - Define structure of data
@@ -29,6 +29,6 @@ typedef struct arg
 {
 	char c;
 	char* (*func)();
-};
+} arg_p;
 
 #endif /*MAIN_H*/
