@@ -30,5 +30,14 @@ int _printf(const char *format, ...);
 int _printf_char(va_list *);
 int _printf_string(va_list *);
 int _printf_int(va_list *);
+int _printf_unsigned_int(va_list *);
+int _printf_double(va_list *);
+int _printf_octal(va_list *);
+int _printf_hexa(va_list *);
+int _printf_mini_hexa(va_list *);
+int _printf_binary(va_list *);
+int _printf_special(va_list *);
+int _printf_rot13(va_list *params);
+int _printf_reverse(va_list *);
 
 #endif /*MAIN_H*/
