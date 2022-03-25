@@ -4,17 +4,12 @@
 #include <stdarg.h> /* va_list, va_start, va_end, va_arg, va_copy*/
 
 /**
- * struct arg - Define structure of data
+ * struct printer - Define structure of data
  * according to give a printf.
  *
- * @c:format of data.
+ * @format:format of data.
  * @func: pointer to a function.
- */
-typedef struct arg
-{
-	char c;
-	int (*func)(va_list *);
-} arg_p;
+*/
 
 /**
  * struct printer - Define structure of data
@@ -33,7 +28,7 @@ typedef struct printer
 int _putchar(char c);
 
 /*Function for select a function acording a format*/
-arg_p choose_func(char form);
+printer_t choose_func(char format);
 
 /*Principal Prootype*/
 int _printf(const char *format, ...);
