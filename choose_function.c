@@ -30,6 +30,7 @@ printer_t choose_func(char format)
 		 * {'*', _printf_special}
 		 */
 	};
+
 	for (i = 0; i < funcs; i++)
 	{
 		if (functions[i].format == format)
