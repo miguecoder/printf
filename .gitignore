@@ -1,6 +1,8 @@
 # Ignore files type C
 .idea
 
+.main.c
+
 *.out
 
 CMakeLists.txt
