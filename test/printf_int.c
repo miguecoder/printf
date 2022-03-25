@@ -1,11 +1,11 @@
-#include "mainn.h"
+#include "main.h"
 
 /**
- * print_int - Print format
+* _print_int - Print format
 * @list: va_arg
 * Return: String to print
 */
-char *print_int(va_list args)
+int _printf_int(va_list args)
 {
 	char *inttoprint;
 	int integer, i = 0, j = 0;

@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h> /* va_list, va_start, va_end, va_arg, va_copy*/
-
+#include <stddef.h>
 /**
  * struct printer - Define structure of data
  * according to give a printf.

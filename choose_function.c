@@ -12,7 +12,7 @@ printer_t choose_func(char format)
 	printer_t functions[] = {
 		{'c', _printf_char},
 		{'s', _printf_string},
-		{'i', _printf_int},
+		/*{'i', _printf_int},
 		{'u', _printf_unsigned_int},
 		{'d', _printf_double},
 		{'o', _printf_octal},
@@ -25,7 +25,7 @@ printer_t choose_func(char format)
 		{'r', _printf_reverse},
 		{'l', _printf_unsigned_int},
 		{'h', _printf_unsigned_int},
-		{'*', _printf_special}
+		{'*', _printf_special}*/
 	};
 	for (i = 0; i < funcs; i++)
 	{

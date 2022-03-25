@@ -9,9 +9,9 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 {
 	va_list argument;
 	int i = 0, state = 1, len = 0;
-	arg_p select_func;
+	printer_t select_func;
 
-	if (format == NULL || (format[0] == '%' && !format[1]))
+	if ((format == NULL) || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
 	}
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 			else
 			{
 				select_func = choose_func(format[i]);
-				if (select_func.c != '*')
+				if (select_func.format != '*')
 				{
 					len += select_func.func(&argument);
 				}
