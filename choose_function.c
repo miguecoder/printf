@@ -2,28 +2,37 @@
 /**
  * choose_func - This functions select a function
  * according a format.
- * @p: is a pointer for va_list of arguments of
- * function printf
+ * @format: the format to be print.
  * Return: Funtion according to format or NULL.
  */
-char* (*choose_func(char *p))(va_list)
+arg_p choose_func(char format)
 {
-	arg_p funciones[] = {
+	int i, funcs = 16;
+
+	arg_p functions[] = {
 		{'c', _printf_char},
 		{'s', _printf_string},
-		{'d', _printf_int},
 		{'i', _printf_int},
-		{'\0', NULL}
+		{'u', _printf_unsigned_int},
+		{'d', _printf_double},
+		{'o', _printf_octal},
+		{'x', _printf_mini_hexa},
+		{'X', _printf_hexa},
+		{'b', _printf_binary},
+		{'R', _printf_rot13},
+		{'S', _printf_string},
+		{'p', _printf_mini_hexa},
+		{'r', _printf_reverse},
+		{'l', _printf_unsigned_int},
+		{'h', _printf_unsigned_int},
+		{'*', _printf_special}
 	};
-	int i = 0;
-
-	while (funciones[i].c)
+	for (i = 0; i < funcs; i++)
 	{
-		if (funciones[i].c == *p)
+		if (functions[i].c == format)
 		{
-			return (funciones[i].func);
+			return (functions[i]);
 		}
-		i++;
 	}
-	return (NULL);
+	return (functions[i - 1]);
 }

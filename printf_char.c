@@ -1,36 +1,18 @@
 #include "main.h"
 
 /**
- *print_char - print formated of char
- *@list: va_list of arguments
- *Return: print chain
+ * _printf_char - print formated of char
+ * @arg: va_list of arguments
+ * Return: 1 always
  *
  */
 
-char *_printf_char(va_list arg)
+int _printf_char(va_list *arg)
 {
-	char *chartoprint;
-	char chr;
+	char ch;
 
-	if (arg == NULL)
-		return (0);
+	ch = va_arg(*arg, int);
 
-	chr = va_arg(arg, int);
-	chartoprint = malloc(sizeof(char) * 2);
-
-	if (chartoprint == NULL)
-	{
-		free(chartoprint);
-		return (NULL);
-	}
-	if (chr)
-	{
-		chartoprint[0] = chr;
-	}
-	else
-	{
-		chartoprint[0] = '\0';
-	}
-	chartoprint[1] = '\0';
-	return (chartoprint);
+	_putchar(ch);
+	return (1);
 }

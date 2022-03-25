@@ -4,20 +4,6 @@
 #include <stdlib.h> /* malloc, free*/
 #include <unistd.h> /* Write function*/
 
-/*Principal Prootype*/
-int _printf(const char *format, ...);
-
-/*Old functions that can help us*/
-int _strlen(char *s);
-
-/*Function to select a function acording a format*/
-char* (*choose_func(char *p))(va_list);
-
-/*New prototypes for printf acording a format*/
-char _printf_char(va_list arg);
-char _printf_string(va_list arg);
-char _printf_int(va_list arg);
-
 /**
  * struct arg - Define structure of data
  * according to give a printf.
@@ -28,7 +14,22 @@ char _printf_int(va_list arg);
 typedef struct arg
 {
 	char c;
-	char* (*func)();
+	int (*func)(va_list *);
 } arg_p;
+
+/*Principal Prootype*/
+int _printf(const char *format, ...);
+
+/*Old functions that can help us*/
+int _strlen(char *s);
+int _putchar(char c);
+
+/*Function for select a function acording a format*/
+arg_p choose_func(char format);
+
+/*New prototypes for printf acording a format*/
+char _printf_char(va_list arg);
+char _printf_string(va_list arg);
+char _printf_int(va_list arg);
 
 #endif /*MAIN_H*/

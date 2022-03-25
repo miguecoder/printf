@@ -8,53 +8,52 @@
 int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 {
 	va_list argument;
-	int i, j, len = 0, kby = 1024;
-	char *f_name, buffer[kby], ch;
-	char* (*f)(va_list);
+	int i = 0, state = 1, len = 0;
+	arg_p = select_func;
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
 	}
 
 	va_start(argument, format);
 
-	for (i = 0; format[i]; i++)
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] != '%')
 		{
-			/*char* (*choose_func(char *))(va_list)*/
-			f = choose_func((char *)format + i + 1);
-
-			if (f == NULL)
+			if (state)
 			{
-				return (-1);
+			len += _putchar(format[i]);
 			}
-
-			f_name = f(argument);
-			for (j = 0; f_name[j]; j++)
+			else
 			{
-				buffer[len] = f_name[j];
-				len++;
+				select_func = choose_func(format[i]);
+				if (select_func.c != '*')
+				{
+					len += select_func.func(&argument);
+				}
+				else
+				{
+					len += _putchar('%') + _putchar(format[i]);
+				}
+				state = 1;
 			}
-			if (len == 0)
-			{
-				len = 1;
-			}
-			i++;
 		}
 		else
 		{
-			buffer[len] = format[i];
-			ch = buffer[len];
-			if (ch == '%')
+			if (state)
 			{
-				format++;
+				state = 0;
 			}
-			len++;
+			else
+			{
+				len += _putchar(format[i]);
+				state = 1;
+			}
 		}
+		i++;
 	}
 	va_end(argument);
-	write(1, &buffer, len);
 	return (len);
 }

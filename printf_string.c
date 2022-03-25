@@ -1,56 +1,24 @@
 #include "main.h"
-
 /**
-* _place - Replace string
-* @dest: destiny
-* @source: fountain
-* Return: string
-*/
-
-char *_place(char *dest, char *source)
-{
-	int i = 0;
-
-	while (source[i])
-	{
-		dest[i] = source[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-/**
-* print_string - Print the string
-* @list: va_list
+* _printf_string - Print the string
+* @arg: va_list
 * Return: return pointer
 */
 
-char *print_string(va_list list)
+int _printf_string(va_list *arg)
 {
-	char *string;
-	char *result;
-	int s;
+	int len = 0;
+	char *str = va_arg(*arg, char *);
 
-	if (!list)
-		return (0);
-	string = va_arg(list, char *);
-	if (string == NULL)
+	if (str == NULL)
 	{
-		/* 6 for (null) 1 for '\0' */
-		result = malloc(sizeof(char) * 7);
-		result = _place(result, "(null)");
-		return (result);
+		str = "(null)";
 	}
-	if (string[0] == '\0')
-		string = "";
-	result = malloc(j + 1);
-	if (!result)
-		{
-		free(result);
-		return (NULL);
-		}
-	result = _place(result, string);
+	while (str[len] != '\0')
+	{
+		_putchar(str[len]);
+		len++;
+	}
 
-	return (result);
+	return (len);
 }
