@@ -1,8 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdarg.h> /* va_list, va_start, va_end, va_arg, va_copy*/
-#include <stdlib.h> /* malloc, free*/
-#include <unistd.h> /* Write function*/
 
 /**
  * struct arg - Define structure of data
@@ -28,8 +27,8 @@ int _putchar(char c);
 arg_p choose_func(char format);
 
 /*New prototypes for printf acording a format*/
-char _printf_char(va_list arg);
-char _printf_string(va_list arg);
-char _printf_int(va_list arg);
+int _printf_char(va_list *);
+int _printf_string(va_list *);
+int _printf_int(va_list *);
 
 #endif /*MAIN_H*/
