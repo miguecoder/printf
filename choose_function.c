@@ -9,7 +9,7 @@ printer_t choose_func(char format)
 {
 	int i, funcs = 16;
 
-	arg_p functions[] = {
+	printer_t functions[] = {
 		{'c', _printf_char},
 		{'s', _printf_string},
 		{'i', _printf_int},
@@ -29,7 +29,7 @@ printer_t choose_func(char format)
 	};
 	for (i = 0; i < funcs; i++)
 	{
-		if (functions[i].c == form)
+		if (functions[i].format == format)
 		{
 			return (functions[i]);
 		}
