@@ -11,13 +11,6 @@
  * @func: pointer to a function.
 */
 
-/**
- * struct printer - Define structure of data
- * according to give a printf.
- *
- * @format:format of data.
- * @func: pointer to a function.
- */
 typedef struct printer
 {
 	char format;
