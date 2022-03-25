@@ -5,7 +5,7 @@
  * @format: the format to be print.
  * Return: Funtion according to format or NULL.
  */
-arg_p choose_func(char form)
+printer_t choose_func(char format)
 {
 	int i, funcs = 16;
 
