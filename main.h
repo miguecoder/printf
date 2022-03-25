@@ -16,6 +16,13 @@ typedef struct arg
 	int (*func)(va_list *);
 } arg_p;
 
+/**
+ * struct printer - Define structure of data
+ * according to give a printf.
+ *
+ * @format:format of data.
+ * @func: pointer to a function.
+ */
 typedef struct printer
 {
 	char format;

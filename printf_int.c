@@ -47,10 +47,10 @@ char *print_int(va_list args)
 		inttoprint = malloc(sizeof(char) * i);
 
 		i--;
+		
 		while (i >= 0)
 		inttoprint[j++] = buffer[i--];
 	}
 	inttoprint[j] = '\0';
 	return (inttoprint);
 }
-
