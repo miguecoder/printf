@@ -9,7 +9,7 @@ int _printf(const char *format, ...)/*"Hello: %i, %c, %s", 45, H, world*/
 {
 	va_list argument;
 	int i = 0, state = 1, len = 0;
-	arg_p = select_func;
+	arg_p select_func;
 
 	if (format == NULL || (format[0] == '%' && !format[1]))
 	{

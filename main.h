@@ -16,6 +16,12 @@ typedef struct arg
 	int (*func)(va_list *);
 } arg_p;
 
+typedef struct printer
+{
+	char format;
+	int (*func)(va_list *);
+} printer_t;
+
 /*Old functions that can help us*/
 int _putchar(char c);
 
