@@ -16,15 +16,14 @@ typedef struct arg
 	int (*func)(va_list *);
 } arg_p;
 
-/*Principal Prootype*/
-int _printf(const char *format, ...);
-
 /*Old functions that can help us*/
-int _strlen(char *s);
 int _putchar(char c);
 
 /*Function for select a function acording a format*/
-arg_p choose_func(char format);
+arg_p choose_func(char form);
+
+/*Principal Prootype*/
+int _printf(const char *format, ...);
 
 /*New prototypes for printf acording a format*/
 int _printf_char(va_list *);

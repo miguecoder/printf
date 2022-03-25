@@ -5,7 +5,7 @@
  * @format: the format to be print.
  * Return: Funtion according to format or NULL.
  */
-arg_p choose_func(char format)
+arg_p choose_func(char form)
 {
 	int i, funcs = 16;
 
@@ -29,7 +29,7 @@ arg_p choose_func(char format)
 	};
 	for (i = 0; i < funcs; i++)
 	{
-		if (functions[i].c == format)
+		if (functions[i].c == form)
 		{
 			return (functions[i]);
 		}
