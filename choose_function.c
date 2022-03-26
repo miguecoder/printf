@@ -13,14 +13,14 @@ printer_t choose_func(char format)
 		{'c', _printf_char},
 		{'s', _printf_string},
 		{'i', _printf_int},
-		{'d', _printf_int}
+		{'d', _printf_int},
+		{'b', _printf_binary},
+		{'u', _printf_unsigned_int},
+		{'o', _printf_octal},
+		{'x', _printf_mini_hexa},
+		{'X', _printf_hexa}
 		/**
-		 * {'u', _printf_unsigned_int},
 		 * {'d', _printf_double},
-		 * {'o', _printf_octal},
-		 * {'x', _printf_mini_hexa},
-		 * {'X', _printf_hexa},
-		 * {'b', _printf_binary},
 		 * {'R', _printf_rot13},
 		 * {'S', _printf_string},
 		 * {'p', _printf_mini_hexa},
