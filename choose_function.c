@@ -18,7 +18,8 @@ printer_t choose_func(char format)
 		{'u', _printf_unsigned_int},
 		{'o', _printf_octal},
 		{'x', _printf_mini_hexa},
-		{'X', _printf_hexa}
+		{'X', _printf_hexa},
+		{'S', _printf_string}
 		/**
 		 * {'d', _printf_double},
 		 * {'R', _printf_rot13},
