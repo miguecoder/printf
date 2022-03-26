@@ -19,15 +19,14 @@ printer_t choose_func(char format)
 		{'o', _printf_octal},
 		{'x', _printf_mini_hexa},
 		{'X', _printf_hexa},
-		{'S', _printf_string}
+		{'S', _printf_string},
+		{'p', _printf_mini_hexa},
+		{'l', _printf_unsigned_int},
+		{'h', _printf_unsigned_int},
+		{'R', _printf_rot13},
+		{'r', _printf_reverse}
 		/**
 		 * {'d', _printf_double},
-		 * {'R', _printf_rot13},
-		 * {'S', _printf_string},
-		 * {'p', _printf_mini_hexa},
-		 * {'r', _printf_reverse},
-		 * {'l', _printf_unsigned_int},
-		 * {'h', _printf_unsigned_int},
 		 * {'*', _printf_special}
 		 */
 	};
